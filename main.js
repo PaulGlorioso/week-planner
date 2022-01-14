@@ -41,22 +41,34 @@ document.addEventListener('submit', function (event) {
   };
   if (values.day === 'sunday') {
     data.sunday.push(values);
+    var tbody = document.querySelector('.sunday-list');
+    tbody.prepend(createTask(values));
   } else if (values.day === 'monday') {
     data.monday.push(values);
+    var tbodym = document.querySelector('.monday-list');
+    tbodym.prepend(createTask(values));
   } else if (values.day === 'tuesday') {
     data.tuesday.push(values);
+    var tbodyt = document.querySelector('.tuesday-list');
+    tbodyt.prepend(createTask(values));
   } else if (values.day === 'wednesday') {
     data.wednesday.push(values);
+    var tbodyw = document.querySelector('.wednesday-list');
+    tbodyw.prepend(createTask(values));
   } else if (values.day === 'thursday') {
     data.thursday.push(values);
+    var tbodyth = document.querySelector('.thursday-list');
+    tbodyth.prepend(createTask(values));
   } else if (values.day === 'friday') {
     data.friday.push(values);
+    var tbodyf = document.querySelector('.friday-list');
+    tbodyf.prepend(createTask(values));
   } else if (values.day === 'saturday') {
     data.saturday.push(values);
+    var tbodys = document.querySelector('.saturday-list');
+    tbodys.prepend(createTask(values));
   }
 
-  var tbody = document.querySelector('.table-list');
-  tbody.prepend(createTask(values));
   data.nextEntryId++;
   modal.className = 'modal h';
   overlay.className = 'overlay h';
