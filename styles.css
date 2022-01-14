@@ -126,4 +126,16 @@ h2 {
 table {
   border: 1px solid black;
   width: 100%;
+  border-spacing: 0;
+}
+
+td {
+  border-left: 1px solid black;
+}
+
+.time {
+  width: 30%;
+}
+
+.description {
 }
