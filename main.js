@@ -33,8 +33,19 @@ document.addEventListener('submit', function (event) {
     text: text.value,
     id: data.nextEntryId
   };
+  var tbody = document.querySelector('.table-list');
   data.entries.push(values);
   data.nextEntryId++;
   modal.className = 'modal h';
   overlay.className = 'overlay h';
 });
+
+function createTask(values) {
+  var $tr = document.createElement('tr');
+  var $ttd = document.createElement('td');
+  $ttd.setAttribute('class', 'time-data');
+  $ttd.textContent = values.time;
+  var $dtd = document.createElement('td');
+  $dtd.setAttribute('class', 'desc-data');
+  $dtd.textContent = values.text;
+}

@@ -6,6 +6,7 @@
   <title>Week Planner</title>
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
@@ -23,15 +24,11 @@
     <div class="row">
       <button class="addbutton">Add Entry</button>
     </div>
-    <div class="events">Scheduled Events for Monday</div>
+    <div class="events">
+      <h2>Scheduled Events for Monday</h2>
     <div class="table">
       <table>
-        <thead>
-          <tr>
-            <th colspan="10"></th>
-          </tr>
-        </thead>
-        <tbody>
+        <tbody class="table-list">
           <tr>
             <td class="time">Time</td>
             <td class="description">Description</td>
@@ -52,9 +49,25 @@
             <td></td>
             <td></td>
           </tr>
-
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
         </tbody>
       </table>
+    </div>
     </div>
     <div class="overlay h"></div>
     <div class="modal h">
@@ -99,7 +112,7 @@
           <option value="23:00">23:00</option>
         </select>
       </div>
-      <textarea name="" id="text" rows="7" placeholder="Description"></textarea>
+      <textarea name="" id="text" rows="7" >Description</textarea>
       <div class="submit">
         <button>Submit</button>
       </div>
