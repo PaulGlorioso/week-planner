@@ -1,5 +1,12 @@
+
 var data = {
-  entries: [],
+  sunday: [],
+  monday: [],
+  tuesday: [],
+  wednesday: [],
+  thursday: [],
+  friday: [],
+  saturday: [],
   editing: null,
   nextEntryId: 1
 };
@@ -30,11 +37,26 @@ document.addEventListener('submit', function (event) {
   var values = {
     day: day.value,
     time: time.value,
-    text: text.value,
-    id: data.nextEntryId
+    text: text.value
   };
+  if (values.day === 'sunday') {
+    data.sunday.push(values);
+  } else if (values.day === 'monday') {
+    data.monday.push(values);
+  } else if (values.day === 'tuesday') {
+    data.tuesday.push(values);
+  } else if (values.day === 'wednesday') {
+    data.wednesday.push(values);
+  } else if (values.day === 'thursday') {
+    data.thursday.push(values);
+  } else if (values.day === 'friday') {
+    data.friday.push(values);
+  } else if (values.day === 'saturday') {
+    data.saturday.push(values);
+  }
+
   var tbody = document.querySelector('.table-list');
-  data.entries.push(values);
+  tbody.prepend(createTask(values));
   data.nextEntryId++;
   modal.className = 'modal h';
   overlay.className = 'overlay h';
@@ -45,7 +67,10 @@ function createTask(values) {
   var $ttd = document.createElement('td');
   $ttd.setAttribute('class', 'time-data');
   $ttd.textContent = values.time;
+  $tr.appendChild($ttd);
   var $dtd = document.createElement('td');
   $dtd.setAttribute('class', 'desc-data');
   $dtd.textContent = values.text;
+  $tr.appendChild($dtd);
+  return $tr;
 }
