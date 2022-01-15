@@ -86,3 +86,26 @@ function createTask(values) {
   $tr.appendChild($dtd);
   return $tr;
 }
+
+var days = document.querySelector('.daysofweek');
+var daysel = document.querySelectorAll('.day');
+var tablelist = document.querySelectorAll('.table-list');
+days.addEventListener('click', function (event) {
+  if (event.target.matches('.day')) {
+    for (var i = 0; i < daysel.length; i++) {
+      if (event.target === daysel[i]) {
+        daysel[i].className = 'day active';
+      } else {
+        daysel[i].className = 'day';
+      }
+    }
+    var data = event.target.getAttribute('data-view');
+    for (var x = 0; x < tablelist.length; x++) {
+      if (data === tablelist[x].getAttribute('data-view')) {
+        tablelist[x].className = 'view';
+      } else {
+        tablelist[x].className = 'view hidden';
+      }
+    }
+  }
+});
