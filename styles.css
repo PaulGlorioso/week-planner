@@ -178,3 +178,13 @@ tr:nth-child(even) {
 .table-list.active {
   display: contents;
 }
+
+.desc-data {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.editButton {
+  padding: 0;
+}

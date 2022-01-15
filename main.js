@@ -1,4 +1,3 @@
-
 var data = {
   sunday: [],
   monday: [],
@@ -85,16 +84,22 @@ function createTask(values) {
   $dtd.setAttribute('class', 'desc-data');
   $dtd.textContent = values.text;
   $tr.appendChild($dtd);
+  var $edit = document.createElement('button');
+  $edit.setAttribute('class', 'editButton');
+  $edit.textContent = 'Update';
+  $dtd.appendChild($edit);
   return $tr;
 }
 
 var days = document.querySelector('.daysofweek');
 var daysel = document.querySelectorAll('.day');
 var tablelist = document.querySelectorAll('.table-list');
+var h2 = document.querySelector('.event-title');
 days.addEventListener('click', function (event) {
   if (event.target.matches('.day')) {
     for (var i = 0; i < daysel.length; i++) {
       if (event.target === daysel[i]) {
+        h2.textContent = 'Scheduled Events for ' + event.target.textContent;
         daysel[i].className = 'day active';
       } else {
         daysel[i].className = 'day';
