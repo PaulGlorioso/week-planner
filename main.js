@@ -41,37 +41,38 @@ document.addEventListener('submit', function (event) {
   };
   if (values.day === 'sunday') {
     data.sunday.push(values);
-    var tbody = document.querySelector('.sunday-list');
+    var tbody = document.getElementById('sunday-list');
     tbody.prepend(createTask(values));
   } else if (values.day === 'monday') {
     data.monday.push(values);
-    var tbodym = document.querySelector('.monday-list');
+    var tbodym = document.getElementById('monday-list');
     tbodym.prepend(createTask(values));
   } else if (values.day === 'tuesday') {
     data.tuesday.push(values);
-    var tbodyt = document.querySelector('.tuesday-list');
+    var tbodyt = document.getElementById('tuesday-list');
     tbodyt.prepend(createTask(values));
   } else if (values.day === 'wednesday') {
     data.wednesday.push(values);
-    var tbodyw = document.querySelector('.wednesday-list');
+    var tbodyw = document.getElementById('wednesday-list');
     tbodyw.prepend(createTask(values));
   } else if (values.day === 'thursday') {
     data.thursday.push(values);
-    var tbodyth = document.querySelector('.thursday-list');
+    var tbodyth = document.getElementById('thursday-list');
     tbodyth.prepend(createTask(values));
   } else if (values.day === 'friday') {
     data.friday.push(values);
-    var tbodyf = document.querySelector('.friday-list');
+    var tbodyf = document.getElementById('friday-list');
     tbodyf.prepend(createTask(values));
   } else if (values.day === 'saturday') {
     data.saturday.push(values);
-    var tbodys = document.querySelector('.saturday-list');
+    var tbodys = document.getElementById('saturday-list');
     tbodys.prepend(createTask(values));
   }
 
   data.nextEntryId++;
   modal.className = 'modal h';
   overlay.className = 'overlay h';
+  document.getElementById('form').reset();
 });
 
 function createTask(values) {
@@ -102,9 +103,9 @@ days.addEventListener('click', function (event) {
     var data = event.target.getAttribute('data-view');
     for (var x = 0; x < tablelist.length; x++) {
       if (data === tablelist[x].getAttribute('data-view')) {
-        tablelist[x].className = 'view';
+        tablelist[x].className = 'table-list active';
       } else {
-        tablelist[x].className = 'view hidden';
+        tablelist[x].className = 'table-list';
       }
     }
   }

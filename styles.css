@@ -140,7 +140,6 @@ form > h2 {
 }
 
 table {
-  empty-cells: show;
   border-collapse: collapse;
   border: 2px solid black;
   width: 90%;
@@ -170,4 +169,12 @@ tr:nth-child(even) {
   margin: 0;
   background-color: #ccc;
   font-weight: bold;
+}
+
+.table-list {
+  display: none;
+}
+
+.table-list.active {
+  display: contents;
 }
