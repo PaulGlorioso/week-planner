@@ -8,7 +8,7 @@ body {
 h1 {
   display: flex;
   justify-content: center;
-  font-weight: 300;
+  font-weight: bold;
 }
 
 .container {
@@ -140,19 +140,17 @@ form > h2 {
 }
 
 table {
-  border-collapse: collapse;
   border: 2px solid black;
   width: 90%;
   border-spacing: 0;
 }
 
 td {
-  border-left: 1px solid black;
   padding: 1rem;
   margin: 1rem;
 }
 
-tr:nth-child(even) {
+tr:nth-child(odd) {
   background-color: #eee;
 }
 
@@ -165,6 +163,7 @@ tr:nth-child(even) {
 }
 
 .description {
+  border-left: 1px solid black;
   padding: 0;
   margin: 0;
   background-color: #ccc;
@@ -179,12 +178,21 @@ tr:nth-child(even) {
   display: contents;
 }
 
+.time-data {
+  width: 20%;
+}
+
 .desc-data {
+  border-left: 1px solid black;
   display: flex;
   justify-content: space-between;
   margin: 0;
 }
 
-.editButton {
-  padding: 0;
+.edit-button {
+  background-color: #2b78e4;
+  color: white;
+  padding: 0 1rem;
+  border: 2px solid black;
+  box-shadow: 2px 2px 2px black;
 }

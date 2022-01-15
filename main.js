@@ -85,7 +85,7 @@ function createTask(values) {
   $dtd.textContent = values.text;
   $tr.appendChild($dtd);
   var $edit = document.createElement('button');
-  $edit.setAttribute('class', 'editButton');
+  $edit.setAttribute('class', 'edit-button');
   $edit.textContent = 'Update';
   $dtd.appendChild($edit);
   return $tr;
